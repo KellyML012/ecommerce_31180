@@ -1,0 +1,53 @@
+.navbar {
+    float: left;
+    width: 100%;
+    border-bottom: #ccc;
+    display: flex;
+}
+
+ .container-logo{
+    width: 100px;
+}
+
+.header-title {
+    font-size: 20px;
+    font-family: 'Georgia';
+    color: #9C27B0;
+}
+
+.header-primary {
+    background: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid #9C27B0;
+}
+
+.header-primary .navbar li {
+    margin-right: 10px;
+}
+
+.header-primary .navbar .navbar-btn {
+    font-family: 'Tahoma';
+    text-transform: none;
+    font-weight: 400;
+    font-size: 16px;
+    color: #161616
+}
+
+.header-primary .navbar .navbar-btn:hover {
+    font-weight: 500;
+    color: #9C27B0;
+}
+
+.header-primary .navbar .navbar-btn:hover::before {
+    width: 85%;
+}
+
+.header-primary .navbar .navbar-btn:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    transition: width 0.3s ease;
+    height: 1px;
+    background: #9C27B0;
+    bottom: 5px;
+}
