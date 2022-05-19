@@ -1,0 +1,6 @@
+.navbar {
+    float: left;
+    width: 100%;
+    border-bottom: #ccc;
+    display: flex;
+}

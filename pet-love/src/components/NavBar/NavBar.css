@@ -1,11 +1,4 @@
-.navbar {
-    float: left;
-    width: 100%;
-    border-bottom: #ccc;
-    display: flex;
-}
-
- .container-logo{
+.container-logo{
     width: 100px;
 }
 

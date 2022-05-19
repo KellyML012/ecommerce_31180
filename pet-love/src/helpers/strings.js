@@ -1,0 +1,1 @@
+export const navbarOptions = ['Inicio', 'Productos', 'Contacto', 'Preguntas Frecuentes']

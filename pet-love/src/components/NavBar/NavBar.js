@@ -1,4 +1,5 @@
 import { AppBar, Button, Toolbar } from '@mui/material'
+import NavbarElement from '../NavbarElement/NavbarElement'
 import './NavBar.css'
 
 const NavBar = () => {
@@ -8,20 +9,7 @@ const NavBar = () => {
                 <div className='container-logo'>
                     <span className='header-title'>Pet Love</span>
                 </div>
-                <ul className='navbar'>
-                    <li>
-                        <Button disableRipple style={{ background: 'transparent'}} variant='text' className='navbar-btn'>Inicio</Button>
-                    </li>
-                    <li>
-                        <Button disableRipple style={{ background: 'transparent'}} variant='text' className='navbar-btn'>Productos</Button>
-                    </li>
-                    <li>
-                        <Button disableRipple style={{ background: 'transparent'}} variant='text' className='navbar-btn'>Contacto</Button>
-                    </li>
-                    <li>
-                        <Button disableRipple style={{ background: 'transparent'}} variant='text' className='navbar-btn'>Preguntas frecuentes</Button>
-                    </li>
-                </ul>
+                <NavbarElement />
                 <Button color='secondary' variant='outlined'>Login</Button>
             </Toolbar>
         </AppBar>
