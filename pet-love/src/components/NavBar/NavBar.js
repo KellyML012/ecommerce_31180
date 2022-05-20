@@ -1,6 +1,8 @@
+import './NavBar.css'
 import { AppBar, Button, Toolbar } from '@mui/material'
 import NavbarElement from '../NavbarElement/NavbarElement'
-import './NavBar.css'
+import CartWidget from '../CartWidget/CartWidget' 
+
 
 const NavBar = () => {
     return (
@@ -10,7 +12,7 @@ const NavBar = () => {
                     <span className='header-title'>Pet Love</span>
                 </div>
                 <NavbarElement />
-                <Button color='secondary' variant='outlined'>Login</Button>
+                <CartWidget />
             </Toolbar>
         </AppBar>
     )
