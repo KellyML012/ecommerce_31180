@@ -2,6 +2,7 @@ import './Card.css'
 import { Card, CardContent, Button } from "@mui/material"
 import { useState } from 'react';
 import Modal from '../Modal/Modal';
+import ItemCount from '../ItemCount/ItemCount';
 
 const CardItem = ({ title, price, image} ) => {
     
@@ -10,7 +11,7 @@ const CardItem = ({ title, price, image} ) => {
         setOpen(false)
     }
 
-    return(
+        return(
         <Card sx={{ minWidth: 275 }}>
             <CardContent>
                 <div className="card-item">
@@ -19,7 +20,8 @@ const CardItem = ({ title, price, image} ) => {
                     </div>
                     <p>{title}</p>
                     <span>$ {price}</span>
-                    <Button variant='contained' onClick={() => setOpen(true)}>Detalle</Button>
+                    <Button color='secondary' variant='outlined' onClick={() => setOpen(true)}>Detalle</Button>
+                    <ItemCount />
                 </div>
             </CardContent>
             <Modal handleClose={handleClose} open={open}>
