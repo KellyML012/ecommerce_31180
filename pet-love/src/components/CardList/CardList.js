@@ -1,46 +1,54 @@
 import './CardList.css'
-import CardItem from '../Card/Card'
+import CardItem from '../Card/Card';
 import { Container } from '@mui/system';
 import { Grid } from '@mui/material';
+import { products } from "../../helpers/products";
+import { useEffect } from 'react';
 
-const CardList = () => {
-    const productos = [
-        {
-            id : 1,
-            title : "Cama Moisés",
-            price : 3.500,
-            image : 'Cama-moises-01.png'
-        },
-        {
-            id : 2,
-            title : "Cama para perros mediana",
-            price : 6.500,
-            image : 'Cama-perro-01.png'
-        },
-        {
-            id : 3,
-            title : "Cucha Térmica grande",
-            price : 9.000,
-            image : "Cucha-perro-02.png"
+const CardList = ( {title} ) => {
+    
+    const getProducts = () => {
+        return new Promise( (resolve, reject) => {
+            resolve(products)
+        })
+    }
+
+    useEffect( () => {
+        getProducts()
+            .then((response) => {
+                console.log("Resuesta promesa : ", response)
+            })
+            .catch((error) => {
+                console.log("Hubo una falla en el servicio.", error)
+            })
+    }, [])    
+
+    /* async function getProductsAsync () {
+        try {
+            const productos = await getProducts()
+            console.log("Productos asíncronos:", productos)
+        } catch (error) {
+            console.log("Falló la llamada.")
         }
-    ]
+    } 
+    
+    getProductsAsync()
+    */
 
     return(
         <>
-            <h2>
-                Productos recomendados
-            </h2>
+            <h2>{title}</h2>
             <Container>
-                <Grid container className='general-container'>
-                    <Grid item md={3}>
-                        <CardItem title={'Cama Moisés'} price={'3.500'} image={'Cama-moises-01.png'} />
-                    </Grid>
-                    <Grid item md={3}>
-                        <CardItem title={'Cama para perros mediana'} price={'6.500'} image={'Cama-perro-01.png'} />
-                    </Grid>
-                    <Grid item md={3}>
-                        <CardItem title={'Cucha Térmica grande'} price={'9.000'} image={'Cucha-perro-02.png'} />
-                    </Grid>
+                <Grid container spacing={2} className='general-container'>
+                    {products.map( ({title, price, image, id}) => {
+                        return (
+                            <>
+                                <Grid item md={3} key={id}>
+                                    <CardItem title={title} price={price} image={image} />
+                                </Grid>
+                            </>
+                        )
+                    })}
                 </Grid>
             </Container>
         </>

@@ -1,5 +1,5 @@
 import './NavBar.css'
-import { AppBar, Button, Toolbar } from '@mui/material'
+import { AppBar, Toolbar } from '@mui/material'
 import NavbarElement from '../NavbarElement/NavbarElement'
 import CartWidget from '../CartWidget/CartWidget' 
 
