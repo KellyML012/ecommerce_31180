@@ -1,0 +1,11 @@
+.item-list-general {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 15px;
+    padding-left: 15px;
+}
+
+.item-list-general h2{
+    width: 100%;
+}

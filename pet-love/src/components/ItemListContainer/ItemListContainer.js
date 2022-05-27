@@ -1,3 +1,4 @@
+import "./ItemListContainer.css"
 import ItemList from "../ItemList/ItemList";
 import { products } from "../../helpers/products";
 import { useEffect } from "react";
@@ -32,7 +33,9 @@ const ItemListContainer = () => {
     */
 
     return(
-        <ItemList title={"Productos Recomendados"} products={products}/>
+        <div className="item-list-container">
+            <ItemList title={"Productos Recomendados"} products={products}/>
+        </div>
     )
 }
 

@@ -8,12 +8,12 @@ const ItemCount = () => {
 
     const addCount = () => {
         if(count < stock) {
-            setCount( count + 1 )
+            setCount( prev => prev + 1 )
         }
     }
     const subtractCount = () => {
         if(count > 0) {
-            setCount( count - 1 )
+            setCount( prev => prev - 1 )
         }
     }
 
@@ -25,11 +25,11 @@ const ItemCount = () => {
         <div className="count-container">
             <div className='count-item'>
                 {/* <Button onClick={subtractCount} disabled={count == 0}>-</Button> */}
-                <Button onClick={subtractCount}>-</Button>
+                <Button disableRipple onClick={subtractCount}>-</Button>
                 <p>{count}</p>
-                <Button onClick={addCount}>+</Button>
+                <Button disableRipple onClick={addCount}>+</Button>
             </div>
-            <Button color='secondary' variant='contained' onClick={onAddToCard}>Comprar</Button>
+            <Button color='secondary' variant='contained' onClick={onAddToCard}>Agregar al carrito</Button>
         </div>
     )
 }

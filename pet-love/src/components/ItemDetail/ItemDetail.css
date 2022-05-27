@@ -1,0 +1,35 @@
+.detail {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.detail-image {
+    width: 60%;
+}
+
+.detail-image img {
+    width: 100%;
+}
+
+.detail-info {
+    width: 40%;
+    padding: 20px;
+    text-align: left;
+}
+
+.detail-price {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.price-dues {
+    display: flex;
+    justify-content: flex-start;
+    height: 25px;
+}
+
+.price-dues span {
+    line-height: 25px;
+    margin-left: 5px;
+}

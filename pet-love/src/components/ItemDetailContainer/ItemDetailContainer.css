@@ -1,0 +1,7 @@
+.detail-container {
+    margin: 0 auto;
+    width: 80%;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
