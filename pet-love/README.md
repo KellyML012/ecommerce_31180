@@ -26,9 +26,11 @@ Este proyecto está actualmente en desarrollo. Los usuarios pueden navegar entre
 
 ## Captura de pantalla del proyecto
 
-[![Love-pet_primera_entrega.gif](https://s8.gifyu.com/images/Love-pet_primera_entrega.gif)](https://drive.google.com/file/d/1oqd8sgyeewoh3FXjEt8_5FGLxxWIvaLj/view?usp=sharing)
+[![Love-pet_primera_entrega.md.gif](https://s8.gifyu.com/images/Love-pet_primera_entrega.md.gif)](https://drive.google.com/file/d/1oqd8sgyeewoh3FXjEt8_5FGLxxWIvaLj/view?usp=sharing)
 
-## Reflexióm
+[Link al video](https://drive.google.com/file/d/1oqd8sgyeewoh3FXjEt8_5FGLxxWIvaLj/view?usp=sharing)
+
+## Reflexión
 
 Este fue un proyecto de 4 semanas realizado durante mi curso de React en CODERHOUSE. Los objetivos del proyecto incluían el uso de tecnologías aprendidas hasta ese momento y familiarizarme con la documentación de las nuevas funciones.
 

@@ -15,7 +15,7 @@ const CategoryList = () => {
         })
     }
 
-    const filterByCategory = (array) => {
+    /* const filterByCategory = (array) => {
         array.map( (article) => {
             // eslint-disable-next-line
             if(article.category == category) {
@@ -23,12 +23,18 @@ const CategoryList = () => {
             };
             return article
         })
+    } */
+
+    const filterByCategory = (array) => {
+        return array.filter( article =>
+            article.category === category && setProductos(productos => [...productos, article])
+        )
     }
 
     useEffect( () => {
-        setProductos([])
         getProducts()
-            .then( (response) => {
+        .then( (response) => {
+                setProductos([])
                 filterByCategory(response)
             })
             .catch((error) => {
