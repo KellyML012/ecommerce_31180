@@ -24,7 +24,6 @@ const ItemCount = () => {
     return(
         <div className="count-container">
             <div className='count-item'>
-                {/* <Button onClick={subtractCount} disabled={count == 0}>-</Button> */}
                 <Button disableRipple onClick={subtractCount}>-</Button>
                 <p>{count}</p>
                 <Button disableRipple onClick={addCount}>+</Button>

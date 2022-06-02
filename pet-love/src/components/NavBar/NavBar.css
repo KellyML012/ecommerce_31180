@@ -1,10 +1,26 @@
-.container-logo{
-    width: 100px;
+.container-logo {
+    width: 50px;
+}
+
+.container-logo img {
+    width: 100%;
 }
 
 .header-title {
+    width: 100px;
     font-size: 20px;
     font-family: 'Georgia';
+    color: #9C27B0;
+}
+
+.header-primary a {
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+a:link, a:visited, a:hover, a:active{
     color: #9C27B0;
 }
 
@@ -16,6 +32,7 @@
 
 .header-primary .navbar li {
     margin-right: 10px;
+    list-style-type: none;
 }
 
 .header-primary .navbar .navbar-btn {

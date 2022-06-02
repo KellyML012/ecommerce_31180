@@ -7,13 +7,18 @@
     user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
-.card-item img{
-    width: 100%;
-}
-
 .card-item {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    border: 1px solid #e5e1e1;
+    /* margin-right: 30px;
+    margin-bottom: 20px; */
+}
+
+.card-item img{
+    width: 100%;
+    cursor: zoom-in;
 }
 
 .card-item p {
@@ -28,6 +33,20 @@
     margin-bottom: 10px;
 }
 
+.card-item a {
+    text-decoration: none;
+    width: 100%;
+}
+
 .card-item Button {
     line-height: 30px;
-  }
+    width: 100%;
+}
+
+.card-item a:active {
+    color: #000;
+}
+
+.modal-title {
+    border-bottom: 1px solid #9C27B0;
+}

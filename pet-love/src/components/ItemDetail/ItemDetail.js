@@ -1,29 +1,33 @@
 import "./ItemDetail.css"
+import { sizes } from "../../helpers/strings";
 import ItemCount from '../ItemCount/ItemCount';
 import CreditCardIcon from '@mui/icons-material/CreditCard';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import MenuItem from '@mui/material/MenuItem';
-import Select, { SelectChangeEvent } from '@mui/material/Select';
+import Select from '@mui/material/Select';
 import { useState } from "react";
 
 const ItemDetail = ( {data} ) => {
     const [size, setSize] = useState('');
 
-    const handleChange = (event: SelectChangeEvent) => {
+    const handleChange = (event) => {
         setSize(event.target.value);
     };
     return(
         <div className="detail">
             <div className="detail-image">
-                <img src={`./${data.image}`} alt={`Producto: ${data.title}`} />
+                <img src={`/${data.image}`} alt={`Producto: ${data.title}`} />
             </div>
             <div className="detail-info">
                 <h1>{data.title}</h1>
+                <FavoriteBorderIcon />
                 <p className="detail-price">$ {data.price}</p>
                 <p className="price-dues">
                     <CreditCardIcon />
                     <span><strong>3 cuotas sin interés</strong> de $ {Math.round((data.price)/3)}</span>
                 </p>
                 <p>{data.description}</p>
+                <label>Seleccione un talle</label>
                 <p>
                     <Select
                         value={size}
@@ -31,12 +35,10 @@ const ItemDetail = ( {data} ) => {
                         displayEmpty
                         inputProps={{ 'aria-label': 'Without label' }}
                     >
-                        <MenuItem value="">
-                            <em>Tamaño</em>
-                        </MenuItem>
-                        <MenuItem value={1}>Pequeño</MenuItem>
-                        <MenuItem value={2}>Mediano</MenuItem>
-                        <MenuItem value={3}>Grande</MenuItem>
+                        <MenuItem value="">Tamaño</MenuItem>
+                        {sizes.map( (productSeize) => {
+                            return <MenuItem value={productSeize}>{productSeize}</MenuItem>
+                        })}
                     </Select>
                 </p>
                 <ItemCount />

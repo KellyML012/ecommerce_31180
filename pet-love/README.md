@@ -1,70 +1,39 @@
-# Getting Started with Create React App
+# Welcome to **Pet Love**!
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Pet Love es un single page e-commerce enfocado en la venta de productos y accesorios para mascotas.
 
-## Available Scripts
+Fue creado con [Create React App](https://github.com/facebook/create-react-app) para el curso de React de [CODERHOUSE](https://www.coderhouse.com), utlizando React, JavaScript y CSS.
 
-In the project directory, you can run:
+## Secciones
 
-### `npm start`
+- Inicio
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- Productos
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Contacto
 
-### `npm test`
+- ¿Cómo comprar?
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Librerías Importadas
 
-### `npm run build`
+- [Create React App](https://github.com/facebook/create-react-app)
+- [React-router-dom](https://reactrouter.com/docs/en/v6/getting-started/installation#basic-installation) 
+- [Material UI](https://mui.com/material-ui)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Status del project
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Este proyecto está actualmente en desarrollo. Los usuarios pueden navegar entre las diferentes secciones, ver en detalle cada producto, ver categorías de productos y agregar cantidad deseada al carrito.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Captura de pantalla del proyecto
 
-### `npm run eject`
+[![Love-pet_primera_entrega.gif](https://s8.gifyu.com/images/Love-pet_primera_entrega.gif)](https://drive.google.com/file/d/1oqd8sgyeewoh3FXjEt8_5FGLxxWIvaLj/view?usp=sharing)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Reflexióm
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Este fue un proyecto de 4 semanas realizado durante mi curso de React en CODERHOUSE. Los objetivos del proyecto incluían el uso de tecnologías aprendidas hasta ese momento y familiarizarme con la documentación de las nuevas funciones.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+El proyecto está enfocado en crear una aplicación que permita a los usuarios navegar y comprar artículos relacionados a las mascotas, más específicamente en perros y gatos. Comencé este proceso usando el CLI oficial de React, create-react-app, luego agregué react-router-dom.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Uno de los principales desafíos con los que me encontré fue integrar la navegabilidad de las secciones en base a su categoría y ID del producto, integrando tags de Material UI para dar estilos prestablecidos.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Hasta el momento las tecnologías implementadas en este proyecto son React, React-Router-DOM, Material UI y una cantidad significativa de VanillaJS, JSX y CSS. Elegí usar el CLI create-react-app para minimizar la configuración inicial e invertir más tiempo en sumergirme en buenas prácticas y eficiente organización del proyecto. En la próxima la próxima, planeo implementar eventos, Contex, tecnologías de rendering y Firebase.
