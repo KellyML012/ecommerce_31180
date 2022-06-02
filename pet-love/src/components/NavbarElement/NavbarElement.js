@@ -8,7 +8,7 @@ const NavbarElement = () => {
         <ul className='navbar'>
             {navbarOptions.map( ( {link, navbar} ) => {
                 return (
-                    <li>
+                    <li key={navbar}>
                         <Button 
                             disableRipple 
                             style={{ background: 'transparent' }} 
