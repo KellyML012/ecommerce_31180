@@ -6,13 +6,23 @@ import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
 import { useState } from "react";
+import { Link } from 'react-router-dom';
+import { Button } from "@mui/material";
 
 const ItemDetail = ( {data} ) => {
     const [size, setSize] = useState('');
+    const [quantity, setQuantity] = useState(1)
+    const [showButton, setShowButton] = useState(false)
 
     const handleChange = (event) => {
         setSize(event.target.value);
     };
+
+    const addProductToCart = () => {
+        console.log("Producto a agregar", data)
+        console.log("Cantidad", quantity)
+    }
+
     return(
         <div className="detail">
             <div className="detail-image">
@@ -41,7 +51,17 @@ const ItemDetail = ( {data} ) => {
                         })}
                     </Select>
                 </p>
-                <ItemCount />
+                {!showButton ?
+                    <ItemCount 
+                        quantity={quantity}
+                        setQuantity={setQuantity}
+                        setShowButton={setShowButton}
+                    />                
+                : 
+                    <Button color='secondary' variant='outlined' className='finish-buy'>
+                        <Link to={"/cart"}>Terminar mi compra</Link>
+                    </Button>
+                }
             </div>
         </div>
     )
