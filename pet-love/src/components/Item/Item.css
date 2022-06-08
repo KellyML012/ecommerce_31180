@@ -7,6 +7,10 @@
     user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
+.item-card-container {
+    box-shadow: none !important;
+}
+
 .card-item {
     display: flex;
     flex-direction: column;
@@ -49,4 +53,8 @@
 
 .modal-title {
     border-bottom: 1px solid #9C27B0;
+}
+
+.dark-mode p, .dark-mode span{
+    color: #73717e !important;
 }

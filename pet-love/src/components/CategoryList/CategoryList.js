@@ -15,16 +15,6 @@ const CategoryList = () => {
         })
     }
 
-    /* const filterByCategory = (array) => {
-        array.map( (article) => {
-            // eslint-disable-next-line
-            if(article.category == category) {
-                return setProductos(productos => [...productos, article])
-            };
-            return article
-        })
-    } */
-
     const filterByCategory = (array) => {
         return array.filter( article =>
             article.category === category && setProductos(productos => [...productos, article])
@@ -42,10 +32,11 @@ const CategoryList = () => {
             })
             // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [category])
+    const uppercaseTitle = category.toUpperCase()
 
     return(
         <div className="item-list-container">
-            <ItemList title={category.toUpperCase()} products={productos}/>
+            <ItemList title={uppercaseTitle} products={productos}/>
         </div>
     )
 }

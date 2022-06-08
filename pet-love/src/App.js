@@ -8,22 +8,28 @@ import Products from './pages/Products';
 import Contact from './pages/Contact';
 import HowToBuy from './pages/HowToBuy';
 import NotFound from './pages/NotFound';
+import ThemeProvider from './context/ThemeContext';
+import { CartProvider } from './context/CartContext';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route exact path="/" element={ <Home /> } />
-          <Route exact path="/producto/:id" element={ <Detail /> } />
-          <Route exact path="/:category" element={ <Category /> } />
-          <Route exact path="/productos" element={ <Products /> } />
-          <Route exact path="/contacto" element={ <Contact /> } />
-          <Route exact path="/como-comprar" element={ <HowToBuy /> } />
-          <Route exact path="*" element={ <NotFound /> } />
-        </Routes>
-      </BrowserRouter>
+      <CartProvider>
+        <ThemeProvider>
+          <BrowserRouter>
+            <NavBar />
+            <Routes>
+              <Route exact path="/" element={ <Home /> } />
+              <Route exact path="/producto/:id" element={ <Detail /> } />
+              <Route exact path="/:category" element={ <Category /> } />
+              <Route exact path="/productos" element={ <Products /> } />
+              <Route exact path="/contacto" element={ <Contact /> } />
+              <Route exact path="/como-comprar" element={ <HowToBuy /> } />
+              <Route exact path="*" element={ <NotFound /> } />
+            </Routes>
+          </BrowserRouter>
+        </ThemeProvider>
+      </CartProvider>
     </div>
   );
 }

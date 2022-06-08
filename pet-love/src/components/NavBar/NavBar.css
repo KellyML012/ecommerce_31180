@@ -61,3 +61,7 @@ a:link, a:visited, a:hover, a:active{
     background: #9C27B0;
     bottom: 5px;
 }
+
+.dark-mode {
+    background-color: black !important;
+}
