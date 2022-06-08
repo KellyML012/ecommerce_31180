@@ -26,7 +26,7 @@ Este proyecto está actualmente en desarrollo. Los usuarios pueden navegar entre
 
 ## Captura de pantalla del proyecto
 
-![Love-pet_primera_entrega.md.gif](https://s8.gifyu.com/images/Love-pet_primera_entrega.md.gif)
+![Love-pet_primera_entrega.md.gif](https://media.giphy.com/media/GzbGtBTYqcbiKlFN1F/giphy.gif)
 
 [Link al video](https://drive.google.com/file/d/1oqd8sgyeewoh3FXjEt8_5FGLxxWIvaLj/view?usp=sharing)
 
