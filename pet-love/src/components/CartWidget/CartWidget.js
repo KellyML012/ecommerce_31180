@@ -66,7 +66,7 @@ const CartWidget = () =>  {
                                     <span>$ {item.price}</span>
                                 </div>
                                 <div className='cart-prod__action'>
-                                    <button onClick={removeProductToCart}>
+                                    <button onClick={() => removeProductToCart(item.id)}>
                                         <DeleteIcon color='secondary' variant='outlined' className='delete-icon'/>
                                     </button>
                                 </div>

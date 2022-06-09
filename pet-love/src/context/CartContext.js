@@ -15,15 +15,15 @@ const CartProvider = ({ children }) => {
         alert("El producto ya se encuentra en el carrito.")
     }
 
-    const removeProductToCart = (product) => {
+    const removeProductToCart = (id) => {
         alert("El producto se eliminó del carrito.")
-        let index = cartListItems.findIndex( item => item.id === product.id);
-        cartListItems.splice(index, 1);
+        const newItemList = cartListItems.filter( (item) => {return item.id !== id} )
+        setCartListItems(newItemList)
     }
 
     const clearCart = () => {
         alert("El carrito está vacío.")
-        return cartListItems.length = 0
+        setCartListItems([])
     }
 
     const data = {
