@@ -41,7 +41,7 @@ const CartWidget = () =>  {
                     {cartListItems.length === 0 ? (
                         <>
                             <p>No hay productos agregados al carrito.</p>
-                            <Link to="/cucha">Empezar a comprar</Link>
+                            <Link to="/productos/cucha">Empezar a comprar</Link>
                         </>
                     )
                     :
