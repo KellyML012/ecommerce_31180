@@ -9,7 +9,7 @@ import { Button } from '@mui/material';
 
 const CartWidget = () =>  {
 
-    const { cartListItems, removeProductToCart, clearCart } = useContext(CartContext)
+    const { cartListItems, removeProductFromCart, clearCart } = useContext(CartContext)
 
     const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
@@ -21,7 +21,7 @@ const CartWidget = () =>  {
     }
 
     return(
-        <div className='cart-container-icon'>
+        <div className='cartWidgtet-container-icon'>
             <ShoppingCartIcon
                 color='secondary'
                 variant='outlined'
@@ -46,33 +46,49 @@ const CartWidget = () =>  {
                     )
                     :
                     (
-                        <Button
-                            color='secondary'
-                            variant='outlined'
-                            onClick={clearCart}
-                        >
-                            Vaciar carrito
-                        </Button>
+                        <>
+                            <Button
+                                color='secondary'
+                                variant='outlined'
+                                onClick={clearCart}
+                            >
+                                Vaciar carrito
+                            </Button>
+                        </>
                     )
                     }
                     {cartListItems.map( (item) => {
                         return(
-                            <div className='item-cart-prod' key={item.id}>
-                                <div className='cart-prod__image'>
+                            <div className='item-cartWidgtet-prod' key={item.id}>
+                                <div className='cartWidgtet-prod__image'>
                                     <img src={`/${item.image}`} alt={item.price} />
                                 </div>
-                                <div className='cart-prod__info'>
+                                <div className='cartWidgtet-prod__info'>
                                     <p>{item.title}</p>
                                     <span>$ {item.price}</span>
                                 </div>
-                                <div className='cart-prod__action'>
-                                    <button onClick={removeProductToCart}>
+                                <div className='cartWidgtet-prod__action'>
+                                    <button onClick={() => removeProductFromCart(item.id)}>
                                         <DeleteIcon color='secondary' variant='outlined' className='delete-icon'/>
                                     </button>
                                 </div>
                             </div>
                         )
-                    })}                    
+                    })}
+                    {cartListItems.length === 0 ? 
+                        ""
+                        :
+                        <div className='cartWidget-finish-buy'>
+                            <Link to={"/carrito"}>
+                                <Button
+                                    color='secondary'
+                                    variant='contained'
+                                >
+                                    Terminar compra
+                                </Button>
+                            </Link>
+                        </div>
+                    }
                 </div>
             </Menu>
         </div>

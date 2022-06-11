@@ -10,6 +10,7 @@ import HowToBuy from './pages/HowToBuy';
 import NotFound from './pages/NotFound';
 import ThemeProvider from './context/ThemeContext';
 import { CartProvider } from './context/CartContext';
+import Cart from './pages/Cart';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
               <Route exact path="/producto/:id" element={ <Detail /> } />
               <Route exact path="/productos/:category" element={ <Category /> } />
               <Route exact path="/productos" element={ <Products /> } />
+              <Route exact path='/carrito' element={ <Cart />} />
               <Route exact path="/contacto" element={ <Contact /> } />
               <Route exact path="/como-comprar" element={ <HowToBuy /> } />
               <Route exact path="*" element={ <NotFound /> } />

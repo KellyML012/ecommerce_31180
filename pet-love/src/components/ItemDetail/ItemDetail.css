@@ -23,6 +23,10 @@
     font-weight: 600;
 }
 
+.favorite-icon:hover {
+    color: rgb(187, 11, 11);
+}
+
 .price-dues {
     display: flex;
     justify-content: flex-start;
@@ -41,5 +45,9 @@
 }
 
 .finish-buy a {
+    text-decoration: none;
+}
+
+.detail-info a {
     text-decoration: none;
 }

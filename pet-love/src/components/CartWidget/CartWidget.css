@@ -1,8 +1,8 @@
-.cart-prod__image img {
+.cartWidgtet-prod__image img {
     width: 110px;
 }
 
-.item-cart-prod {
+.item-cartWidgtet-prod {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -13,17 +13,17 @@
     margin: 0px 9px;
 }
 
-.cart-prod__info {
+.cartWidgtet-prod__info {
     margin: 0 10px;
 }
 
-.cart-prod__action button{
+.cartWidgtet-prod__action button{
     border: none;
     background: none;
     cursor: pointer;
 }
 
-.cart-prod__action button:hover{
+.cartWidgtet-prod__action button:hover{
     color: #ccc;
 }
 
@@ -50,4 +50,14 @@
 
 .delete-icon:hover {
     color: #ccc;
+}
+
+.cartWidget-finish-buy Button{
+    width: 100%;
+}
+
+.cartWidget-finish-buy a {
+    text-decoration: none;
+    text-align: center;
+    color: white;
 }
