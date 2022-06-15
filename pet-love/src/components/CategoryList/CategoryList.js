@@ -1,18 +1,30 @@
 import ItemList from "../ItemList/ItemList";
-import { products } from "../../helpers/products";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+//Firestore
+import { collection, getDocs } from "firebase/firestore"
+import db from "../../config/firebaseConfig";
 
 const CategoryList = () => {
     const [productos, setProductos] = useState([])
     const { category } = useParams()
 
-    const getProducts = () => {
+    /* const getProducts = () => {
         return new Promise( (resolve, reject) => {
             setTimeout( () => {
                 resolve(products)
             }, 1000);
         })
+    } */
+
+    const getProducts = async() => {
+        const productSnaptshot = await getDocs(collection(db, "products"))
+        const productList = productSnaptshot.docs.map((doc) => {
+            let product = doc.data()
+            product.id = doc.id
+            return product
+        })
+        return productList
     }
 
     const filterByCategory = (array) => {
