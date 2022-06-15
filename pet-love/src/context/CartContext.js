@@ -30,6 +30,7 @@ const CartProvider = ({ children }) => {
     const clearCart = () => {
         alert("El carrito está vacío.")
         setCartListItems([])
+        setTotalPrice(0)
     }
 
     /* const cartProductQuantity = () => {

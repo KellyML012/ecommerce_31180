@@ -90,7 +90,7 @@
     text-decoration: none;
 }
 
-.cart-buy{
+.cart-buy {
     text-decoration: none;
     padding: 10px 20px;
     text-align: center;
@@ -105,4 +105,13 @@
 
 .cart-buy:visited, .cart-buy:hover, .cart-buy:active{
     color: #fff;
+}
+
+.form-contact {
+    display: flex;
+    flex-direction: column;    
+}
+
+.form-contact Button {
+    margin-top: 10px;
 }
