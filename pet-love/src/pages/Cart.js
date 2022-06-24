@@ -8,8 +8,8 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 
 const Cart = () => {
-
-    const { cartListItems, removeProductFromCart, totalPrice, modifyProductsQuantity } = useContext(CartContext)
+    
+    const { cartListItems, removeProductFromCart, totalPrice, quantity, addQuantity, substractQuantity } = useContext(CartContext)
 
     return (
         <>
@@ -31,7 +31,7 @@ const Cart = () => {
                         <h2>Quitar</h2>
                     </div>
                     {cartListItems.map( (item) => {
-                        const { id, title, image, price, quantity, stock} = item
+                        const { id, title, image, price, stock} = item
                         return (
                             <div className='cart-table__content' key={id}>
                                 <div className='cart-table__content-img'>
@@ -47,7 +47,7 @@ const Cart = () => {
                                     <Button
                                         disableRipple
                                         color='secondary' variant='outlined'
-                                        onClick={() => modifyProductsQuantity(id, -1)}
+                                        onClick={() => substractQuantity(item)}
                                         disabled={quantity === 1}
                                         className='cart-table__quantity-button'
                                     >
@@ -57,7 +57,7 @@ const Cart = () => {
                                     <Button
                                         disableRipple
                                         color='secondary' variant='outlined'
-                                        onClick={() => modifyProductsQuantity(id, +1)}
+                                        onClick={() => addQuantity(item)}
                                         disabled={stock < quantity}
                                         className='cart-table__quantity-button'
                                     >

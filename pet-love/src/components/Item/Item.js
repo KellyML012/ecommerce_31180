@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom';
 import { ThemeContext } from '../../context/ThemeContext';
 import CartContext from '../../context/CartContext';
 
-const Item = ({ title, price, image, id, stock }) => {
+const Item = ({ id, title, price, image, stock }) => {
+    const item = { id, title, price, image, stock }
 
     const [open, setOpen] = useState(false)    
     const { darkTheme } = useContext(ThemeContext)
@@ -37,7 +38,7 @@ const Item = ({ title, price, image, id, stock }) => {
                     color='secondary'
                     variant='contained'
                     className='item-card-button'
-                    onClick={() => addProductToCart({ title, price, image, id, stock })}
+                    onClick={() => addProductToCart(item, 1)}
                 >
                     Agregar al carrito
                 </Button>
