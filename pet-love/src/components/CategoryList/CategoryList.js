@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 //Firestore
 import { collection, getDocs } from "firebase/firestore"
-import db from "../../config/firebaseConfig";
+import db from "../../services/firebaseConfig";
 
 const CategoryList = () => {
     const [productos, setProductos] = useState([])

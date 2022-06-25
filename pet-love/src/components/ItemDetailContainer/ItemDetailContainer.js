@@ -4,7 +4,7 @@ import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
 import LoadingSpinner from "../LoadingSpinner/LoadingSpinner.js";
 import { doc, getDoc } from "firebase/firestore"
-import db from "../../config/firebaseConfig"
+import db from "../../services/firebaseConfig"
 
 const ItemDetailContainer = () => {
     const { id } = useParams()
@@ -13,7 +13,6 @@ const ItemDetailContainer = () => {
     useEffect( () => {
         getProduct()
         .then( (prod) => {
-            console.log("Respuesta getProduct: ", prod)
             setProduct(prod)
         })
     }, [id])

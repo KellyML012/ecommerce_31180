@@ -22,14 +22,16 @@ const CartWidget = () =>  {
 
     return(
         <div className='cartWidgtet-container-icon'>
-            <ShoppingCartIcon
-                color='secondary'
-                variant='outlined'
-                aria-controls={open ? 'basic-menu' : undefined}
-                aria-haspopup="true"
-                aria-expanded={open ? 'true' : undefined}
-                onClick={handleClick}
-            />
+            <div onClick={handleClick}>
+                <ShoppingCartIcon
+                    color='secondary'
+                    variant='outlined'
+                    aria-controls={open ? 'basic-menu' : undefined}
+                    aria-haspopup="true"
+                    aria-expanded={open ? 'true' : undefined}                    
+                />
+                <span className='cartWidgtet-count'>{cartListItems.length}</span>
+            </div>
             <Menu
                 id="basic-menu"
                 anchorEl={anchorEl}
@@ -46,22 +48,20 @@ const CartWidget = () =>  {
                     )
                     :
                     (
-                        <>
-                            <Button
-                                color='secondary'
-                                variant='outlined'
-                                onClick={clearCart}
-                            >
-                                Vaciar carrito
-                            </Button>
-                        </>
+                        <Button
+                            color='secondary'
+                            variant='outlined'
+                            onClick={clearCart}
+                        >
+                            Vaciar carrito
+                        </Button>
                     )
                     }
                     {cartListItems.map( (item) => {
                         return(
                             <div className='item-cartWidgtet-prod' key={item.id}>
                                 <div className='cartWidgtet-prod__image'>
-                                    <img src={`/${item.image}`} alt={item.price} />
+                                    <img src={`/${item.image}`} alt={item.title} />
                                 </div>
                                 <div className='cartWidgtet-prod__info'>
                                     <p>{item.title}</p>

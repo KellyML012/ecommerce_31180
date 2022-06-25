@@ -5,15 +5,17 @@ import CreditCardIcon from '@mui/icons-material/CreditCard';
 import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
 import MenuItem from '@mui/material/MenuItem';
 import Select from '@mui/material/Select';
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from 'react-router-dom';
 import { Button } from "@mui/material";
+import CartContext from '../../context/CartContext';
 
-const ItemDetail = ( {data} ) => {
-    const { id, title, price, image, category, description, stock} = data
+const ItemDetail = ({ data }) => {
+    const { title, price, image, description, stock } = data
     const [size, setSize] = useState('');
-    const [quantity, setQuantity] = useState(1)
     const [showButton, setShowButton] = useState(false)
+
+    const { quantity, setQuantity} = useContext(CartContext)
 
     const handleChange = (event) => {
         setSize(event.target.value);
@@ -33,7 +35,8 @@ const ItemDetail = ( {data} ) => {
                     <span><strong>3 cuotas sin interés</strong> de $ {Math.round((price)/3)}</span>
                 </p>
                 <p>{description}</p>
-                <label>Seleccione un talle</label>
+                <p>Stock: {stock} unidades</p>
+                <label>Seleccione un talle</label><br/>
                 <Select
                     value={size}
                     onChange={handleChange}
@@ -46,12 +49,13 @@ const ItemDetail = ( {data} ) => {
                     })}
                 </Select>
                 {!showButton ?
-                    <ItemCount 
+                    <ItemCount
                         quantity={quantity}
                         setQuantity={setQuantity}
                         setShowButton={setShowButton}
-                    />                
-                : 
+                        data={data}
+                    />
+                :
                     <Link to={"/carrito"}>
                         <Button color='secondary' variant='outlined' className='finish-buy'>
                             Terminar mi compra

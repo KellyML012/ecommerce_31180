@@ -8,12 +8,12 @@ import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 import RemoveCircleOutlineIcon from '@mui/icons-material/RemoveCircleOutline';
 import Modal from '../components/Modal/Modal';
 import {addDoc, collection} from "firebase/firestore"
-import db from '../config/firebaseConfig';
+import db from '../services/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
 
-    const { cartListItems, removeProductFromCart, totalPrice, modifyProductsQuantity, clearCart } = useContext(CartContext)
+    const { cartListItems, removeProductFromCart, totalPrice, clearCart, quantity, addQuantity, substractQuantity } = useContext(CartContext)
     const [showModal, setShowModal] = useState(false);
     const [formValue, setFormValue] = useState({
         name: "",
@@ -41,7 +41,7 @@ const Cart = () => {
     }
 
     const handleChange = (e) => {
-        //[e.target.name] into brackets to caputre its value - variable value into an object
+        //[e.target.name] into brackets to capture its value - variable value into an object
         setFormValue({...formValue, [e.target.name] : e.target.value})
     }
 
@@ -76,7 +76,7 @@ const Cart = () => {
                         <h2>Quitar</h2>
                     </div>
                     {cartListItems.map( (item) => {
-                        const { id, title, image, price, quantity, stock} = item
+                        const { id, title, image, price, stock} = item
                         return (
                             <div className='cart-table__content' key={id}>
                                 <div className='cart-table__content-img'>
@@ -92,7 +92,7 @@ const Cart = () => {
                                     <Button
                                         disableRipple
                                         color='secondary' variant='outlined'
-                                        onClick={() => modifyProductsQuantity(id, -1)}
+                                        onClick={() => substractQuantity(item)}
                                         disabled={quantity === 1}
                                         className='cart-table__quantity-button'
                                     >
@@ -102,7 +102,7 @@ const Cart = () => {
                                     <Button
                                         disableRipple
                                         color='secondary' variant='outlined'
-                                        onClick={() => modifyProductsQuantity(id, +1)}
+                                        onClick={() => addQuantity(item)}
                                         disabled={stock < quantity}
                                         className='cart-table__quantity-button'
                                     >
