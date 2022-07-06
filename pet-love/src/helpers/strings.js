@@ -1,10 +1,8 @@
 const navbarOptions = [
-    {"navbar" : "Inicio",         "link" : "/"},
-    {"navbar" : "Camas",          "link" : "/productos/cama"},
-    {"navbar" : "Cuchas",         "link" : "/productos/cucha"},
-    {"navbar" : "Productos",      "link" : "/productos"},
-    {"navbar" : "Contacto",       "link" : "/contacto"},
-    {"navbar" : "¿Cómo comprar?", "link" : "/como-comprar"}
+    {"navbar" : "Inicio",         "link" : "/", "submenu": false},
+    {"navbar" : "Productos",      "link" : "/productos", "submenu": true},
+    {"navbar" : "Contacto",       "link" : "/contacto", "submenu": false},
+    {"navbar" : "¿Cómo comprar?", "link" : "/como-comprar", "submenu": false}
 ]
 const sizes = ["Pequeño", "Mediano", "Grande"]
 

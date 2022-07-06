@@ -9,20 +9,20 @@
 
 .item-card-container {
     box-shadow: none !important;
+    border-radius: 35px !important;
+    border: 1px solid #dfdada;
 }
 
 .card-item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #e5e1e1;
-    /* margin-right: 30px;
-    margin-bottom: 20px; */
 }
 
 .card-item img{
     width: 100%;
     cursor: zoom-in;
+    border-radius: 25px;
 }
 
 .card-item p {
@@ -56,5 +56,5 @@
 }
 
 .dark-mode p, .dark-mode span{
-    color: #73717e !important;
+    color: #73717e;
 }

@@ -1,11 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@800&display=swap');
+
 .item-list-general {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding-top: 15px;
     padding-left: 15px;
+    width: 80%;
+    height: auto;
+    margin: 0 auto 100px auto;
+    min-height: 622px;
 }
 
-.item-list-general h2{
-    width: 100%;
+.item-list-title{
+    font-family: 'Baloo Bhaijaan 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 50px;
+    color: #272343;
 }

@@ -1,3 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+.cart-container {
+    height: auto;
+    min-height: 500px;
+    margin-bottom: 50px;
+}
+
+.cart-general-container > h1 {    
+    font-family: 'Baloo Bhaijaan 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 79px;
+    text-align: center;
+    color: #272343;
+}
+
 .col-cart-table__head {
     display: flex;
     border-bottom: 1px solid #ccc;
@@ -6,13 +25,15 @@
 }
 
 .col-cart-table__head h2 {
-    font-size: 20px;
+    font-size: 18px;
     color: #fff;
     width: 20%;
     margin: 0;
     height: 50px;
     line-height: 50px;
     font-weight: 500;
+    font-family: 'Poppins';
+    font-style: normal;
 }
 
 .cart-table__content {
@@ -73,10 +94,6 @@
     align-items: flex-end;
 }
 
-.cart-footer button {
-    /* background: black; */
-}
-
 .cart-checkout-details button {
     border-radius: 40px;
     text-transform: none;
@@ -109,7 +126,8 @@
 
 .form-contact {
     display: flex;
-    flex-direction: column;    
+    flex-direction: column;
+    width: 600px;
 }
 
 .form-contact Button {

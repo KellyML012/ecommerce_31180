@@ -9,14 +9,6 @@ const CategoryList = () => {
     const [productos, setProductos] = useState([])
     const { category } = useParams()
 
-    /* const getProducts = () => {
-        return new Promise( (resolve, reject) => {
-            setTimeout( () => {
-                resolve(products)
-            }, 1000);
-        })
-    } */
-
     const getProducts = async() => {
         const productSnaptshot = await getDocs(collection(db, "products"))
         const productList = productSnaptshot.docs.map((doc) => {

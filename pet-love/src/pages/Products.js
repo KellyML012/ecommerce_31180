@@ -1,6 +1,14 @@
+import "./Products.css"
+import ItemListContainer from "../components/ItemListContainer/ItemListContainer"
+import Footer from "./Footer"
+
 const Products = () => {
     return(
-        <h1>PÁGINA DE PRODUCTOS</h1>
+        <>
+            <h1>Catálogo de productos</h1>
+            <ItemListContainer />
+            <Footer />
+        </>
     )
 }
 

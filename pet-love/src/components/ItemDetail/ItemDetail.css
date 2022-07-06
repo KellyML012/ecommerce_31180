@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
 .detail {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    width: 80%;
+    margin: 0 auto;
 }
 
 .detail-image {
@@ -18,27 +22,43 @@
     text-align: left;
 }
 
-.detail-price {
-    font-size: 20px;
-    font-weight: 600;
+.detail-info > h1 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 35px;
+    text-align: left;
+    color: #272343;
+    margin-right: 10px;
+}
+
+.detail-info > h1 + h1{
+    color: #45C1F0;
 }
 
 .favorite-icon:hover {
-    color: rgb(187, 11, 11);
+    color: #bb0b0b;
 }
 
 .price-dues {
-    display: flex;
-    justify-content: flex-start;
-    height: 25px;
+    color: #ccc;
+    margin: 50px 0;
 }
 
-.price-dues span {
+.price-dues p {
+    display: flex;
+    justify-content: flex-start;
+    height: 10px;
+    font-size: 20px;
+}
+
+.price-dues p > span {
     line-height: 25px;
     margin-left: 5px;
 }
 
-.finish-buy {
+.finish-buy{
     margin-top: 20px !important;
     width: 100%;
     height: 40px;
@@ -50,4 +70,32 @@
 
 .detail-info a {
     text-decoration: none;
+}
+
+.itemDetail-description {
+    font-family: 'Poppins';
+    font-style: normal;
+}
+
+.itemDetail-description > div{
+    width: 90%;
+    margin: 50px 50px 0 150px;
+    padding-bottom: 50px;
+}
+
+.itemDetail-description h1 {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 35px;
+    line-height: 35px;
+    margin: 0;
+    padding-top: 20px;
+}
+
+.itemDetail-description p {
+    font-weight: 400;
+    font-size: 20px;
+    color: #272343;
+    text-align: left;
+    margin: 10px 0;
 }

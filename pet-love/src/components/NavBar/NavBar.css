@@ -1,3 +1,8 @@
+.header-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
 .container-logo {
     width: 50px;
 }
@@ -9,8 +14,9 @@
 .header-title {
     width: 100px;
     font-size: 20px;
-    font-family: 'Georgia';
-    color: #9C27B0;
+    font-weight: 700;
+    font-family: 'Poppins';
+    color: #fff !important;
 }
 
 .header-primary a {
@@ -20,46 +26,10 @@
     align-items: center;
 }
 
-a:link, a:visited, a:hover, a:active{
-    color: #9C27B0;
-}
-
 .header-primary {
-    background: none !important;
+    background: #9C27B0 !important;
     box-shadow: none !important;
-    border-bottom: 1px solid #9C27B0;
-}
-
-.header-primary .navbar li {
-    margin-right: 10px;
-    list-style-type: none;
-}
-
-.header-primary .navbar .navbar-btn {
-    font-family: 'Tahoma';
-    text-transform: none;
-    font-weight: 400;
-    font-size: 16px;
-    color: #161616
-}
-
-.header-primary .navbar .navbar-btn:hover {
-    font-weight: 500;
-    color: #9C27B0;
-}
-
-.header-primary .navbar .navbar-btn:hover::before {
-    width: 85%;
-}
-
-.header-primary .navbar .navbar-btn:before {
-    content: '';
-    position: absolute;
-    width: 0;
-    transition: width 0.3s ease;
-    height: 1px;
-    background: #9C27B0;
-    bottom: 5px;
+    height: 7vh;
 }
 
 .dark-mode {

@@ -12,10 +12,10 @@ const NavBar = () => {
     const { darkTheme } = useContext(ThemeContext)
     return (
         <AppBar position='static' className={`header-primary ${darkTheme ? 'dark-mode' : '' }`}>
-            <Toolbar>
+            <Toolbar className='header-container'>
                 <Link to={"/"}>
                     <div className='container-logo'>
-                        <img src='./logo.png' alt='Logo de Pet Love'/>
+                        <img src={`${darkTheme ? "/logo-blanco.png" : "/logo.png"}`} alt='Logo de Pet Love'/>
                     </div>
                     <span className='header-title'>Pet Love</span>
                 </Link>

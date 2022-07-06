@@ -1,0 +1,224 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+.banner-title-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 143px 0 0 138px;
+    width: 30%;
+    text-align: left;
+}
+
+.banner-title-1 h1, .banner-title-1 h2{
+    color: #272343;
+    font-family: 'Baloo Bhaijaan 2';
+    font-style: normal;
+    margin: 0;
+}
+
+.banner-title-1 h1 {
+    font-size: 128px;
+    line-height: 121.66px;
+    height: 100px;
+}
+
+.banner-title-1 h2 {
+    font-size: 80px;
+    line-height: 76.04px;
+}
+
+.banner-title-1 h3 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 48px;
+}
+
+.banner-title-1 Button {
+    width: 357px;
+    height: 68px;
+    border-radius: 50px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 45px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.banner-title-1 Button a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.banner-image-1 {
+    position: absolute;
+    left: 57vw;
+    top: 25vh;
+}
+
+.banner-2 {
+    position: absolute;
+    top: 112vh;
+    left: 16.6vw;
+    width: 64vw;
+    display: flex;
+}
+
+.banner-2__image {
+    width: 40%;
+}
+
+.banner-2__image img {
+    width: 100%;
+}
+
+.banner-2-container {
+    width: 52%;
+    margin-left: 24px;
+}
+
+.banner-2-container h3 {    
+    margin: 132px 0 25px 0;    
+    text-align: left;
+}
+
+.banner-2-container h3, .content-below h3, .banner-3-container h3 {
+    font-family: 'Baloo Bhaijaan 2';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 50px;
+    line-height: 50px;
+    color: #272343;
+}
+
+.banner-2-container h5 {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 42px;
+    text-align: left;
+    margin: 0;
+}
+
+.content-below {
+    width: 90vw;
+    margin: 0 auto;
+}
+
+.content-below h3 {
+    padding-top: 669px;
+    text-align: center;
+    margin: 0;
+}
+
+.content-below img {
+    margin-top: 34px;
+}
+
+.banner2-line {
+    position: absolute;
+    top: 100vh;
+    right: 10vw;
+}
+
+.banner-3-container h3 {
+    padding-top: 76px;
+    margin: 0 auto;
+}
+
+.banner-3-button {
+    width: 800px;
+    margin: 60px auto 67px auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+}
+
+.banner-3-button button {
+    color: #000;
+    width: 150px;
+    height: 50px;
+    background: #fff;
+    border-radius: 50px;
+    font-size: 20px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.banner-3-button button:hover{
+    background: #9C27B0;
+    color: #fff;
+}
+
+.banner-3-container h4 {
+    color: #9C27B0;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 30px;
+    line-height: 45px;
+    text-align: center;
+    margin: 0;
+    padding: 0 0 60px 0;
+}
+
+.banner-3-container h4:hover {
+    color: #fff;
+}
+
+.banner-3-container a {
+    text-decoration: none;
+}
+
+.line-bone {
+    position: absolute;
+    right: 28vw;
+    top: 432vh;
+}
+
+.banner-4-container {
+    padding-top: 50px;
+    width: 90vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.banner-4-container div {
+    padding: 10px 40px;
+}
+
+.banner-4-container h6, .banner-4-container span {    
+    color: #525252;
+}
+
+.banner-4-container h6 {
+    font-size: 30px;
+    font-family: "Arial";
+    font-weight: 100;
+    text-transform: uppercase;
+    margin: 15px 0 5px 0;
+}
+
+.banner-4-container span {
+    font-size: 15px;
+}
+
+.banner-4-pets {
+    width: 100%;
+}
+
+.banner-4-pets img {
+    width: 60%;
+    min-width: 700px;
+}

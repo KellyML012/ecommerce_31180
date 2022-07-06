@@ -6,7 +6,7 @@ const ItemList = ( {title, products} ) => {
     
     return(
         <>
-            <h2>{title}</h2>
+            <h2 className='item-list-title'>{title}</h2>
             <div className='item-list-general'>
                 <Grid container spacing={2}>
                 {products.map(({ title, price, image, id, stock }) => {

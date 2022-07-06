@@ -10,6 +10,7 @@ import Modal from '../components/Modal/Modal';
 import {addDoc, collection} from "firebase/firestore"
 import db from '../services/firebaseConfig';
 import { useNavigate } from 'react-router-dom';
+import Footer from './Footer';
 
 const Cart = () => {
 
@@ -57,163 +58,181 @@ const Cart = () => {
     }
 
     return (
-        <>
-            {cartListItems.length === 0
-            ?
-            <>
-                <h2>No hay productos agregados al carrito.</h2>
-                <Link to="/productos" className='cart-buy'>Empezar a comprar</Link>
-            </>
-            :
-            <Container className='cart-general-container'>
-                <h2>Checkout</h2>
-                <div className='cart-section'>
-                    <div className='col-cart-table__head'>
-                        <h2>Producto</h2>
-                        <h2>Descripción</h2>
-                        <h2>Precio unitario</h2>
-                        <h2>Cantidad</h2>
-                        <h2>Quitar</h2>
-                    </div>
-                    {cartListItems.map( (item) => {
-                        const { id, title, image, price, stock} = item
-                        return (
-                            <div className='cart-table__content' key={id}>
-                                <div className='cart-table__content-img'>
-                                    <img src={`./${image}`} alt={title} />
-                                </div>
-                                <div className='cart-table__content-title'>
-                                    <p>{title}</p>
-                                </div>
-                                <div className='cart-table__content-price'>
-                                    <p>{price}</p>
-                                </div>
-                                <div className='cart-table__content-quantity'>
-                                    <Button
-                                        disableRipple
-                                        color='secondary' variant='outlined'
-                                        onClick={() => substractQuantity(item)}
-                                        disabled={quantity === 1}
-                                        className='cart-table__quantity-button'
-                                    >
-                                        <RemoveCircleOutlineIcon />
-                                    </Button>
-                                    <p>{quantity}</p>
-                                    <Button
-                                        disableRipple
-                                        color='secondary' variant='outlined'
-                                        onClick={() => addQuantity(item)}
-                                        disabled={stock < quantity}
-                                        className='cart-table__quantity-button'
-                                    >
-                                        <AddCircleOutlineIcon />
-                                    </Button>
-                                </div>
-                                <div className='cart-table__content-delete'>
-                                    <button onClick={() => removeProductFromCart(id)}>
-                                        <DeleteIcon color='secondary' variant='outlined' className='delete-icon'/>
-                                    </button>
-                                </div>
-                            </div>                        
-                        )
-                    })}
-                    <div className='cart-footer'>
-                        <Button
-                            color='secondary'
-                            variant='outlined'
-                            className='btn-custom'
-                        >
-                            <Link to={"/productos"}>Continuar comprando</Link>
-                        </Button>
-                        <div className='cart-checkout-details'>
-                            <div className='cart-checkout__total'>
-                                <p>Total</p>
-                                <span>{`$ ${totalPrice}`}</span>
-                            </div>
+        <>  
+            <div className='cart-container'>
+                {cartListItems.length === 0
+                ?
+                <>
+                    <h2>No hay productos agregados al carrito.</h2>
+                    <Link to="/productos" className='cart-buy'>Empezar a comprar</Link>
+                </>
+                :
+                <Container className='cart-general-container'>
+                    <h1>Checkout</h1>
+                    <div className='cart-section'>
+                        <div className='col-cart-table__head'>
+                            <h2>Producto</h2>
+                            <h2>Descripción</h2>
+                            <h2>Precio unitario</h2>
+                            <h2>Cantidad</h2>
+                            <h2>Quitar</h2>
+                        </div>
+                        {cartListItems.map( (item) => {
+                            const { id, title, image, price, stock} = item
+                            return (
+                                <div className='cart-table__content' key={id}>
+                                    <div className='cart-table__content-img'>
+                                        <img src={`./${image}`} alt={title} />
+                                    </div>
+                                    <div className='cart-table__content-title'>
+                                        <p>{title}</p>
+                                    </div>
+                                    <div className='cart-table__content-price'>
+                                        <p>{price}</p>
+                                    </div>
+                                    <div className='cart-table__content-quantity'>
+                                        <Button
+                                            disableRipple
+                                            color='secondary' variant='outlined'
+                                            onClick={() => substractQuantity(item)}
+                                            disabled={quantity === 1}
+                                            className='cart-table__quantity-button'
+                                        >
+                                            <RemoveCircleOutlineIcon />
+                                        </Button>
+                                        <p>{quantity}</p>
+                                        <Button
+                                            disableRipple
+                                            color='secondary' variant='outlined'
+                                            onClick={() => addQuantity(item)}
+                                            disabled={stock < quantity}
+                                            className='cart-table__quantity-button'
+                                        >
+                                            <AddCircleOutlineIcon />
+                                        </Button>
+                                    </div>
+                                    <div className='cart-table__content-delete'>
+                                        <button onClick={() => removeProductFromCart(id)}>
+                                            <DeleteIcon color='secondary' variant='outlined' className='delete-icon'/>
+                                        </button>
+                                    </div>
+                                </div>                        
+                            )
+                        })}
+                        <div className='cart-footer'>
                             <Button
                                 color='secondary'
-                                variant='contained'
+                                variant='outlined'
                                 className='btn-custom'
-                                onClick={() => {
-                                    setShowModal(true)                                    
-                                    formValue.name = ""
-                                    formValue.phone = ""
-                                    formValue.email = ""
-                                }}
                             >
-                                Completar compra
+                                <Link to={"/productos"}>Continuar comprando</Link>
                             </Button>
-                        </div>
-                    </div>
-                </div>
-                <Modal
-                    title={success ? "Compra exitosa" : "Formulario de contacto"}
-                    open={showModal}
-                    handleClose={() => setShowModal(false)}
-                    aria-labelledby="modal-modal-title"
-                    aria-describedby="modal-modal-description"
-                >
-                    {success ? 
-                        (
-                            <div style={{width: "400px"}}>
-                                <p>¡La orden se generó con éxito!</p>
-                                <p>
-                                    Este es tu número de orden: <strong> {success}</strong>
-                                </p>
+                            <div className='cart-checkout-details'>
+                                <div className='cart-checkout__total'>
+                                    <p>Total</p>
+                                    <span>{`$ ${totalPrice}`}</span>
+                                </div>
                                 <Button
                                     color='secondary'
-                                    variant='outlined'
-                                    onClick={finishOrder}
+                                    variant='contained'
+                                    className='btn-custom'
+                                    onClick={() => {
+                                        setShowModal(true)                                    
+                                        formValue.name = ""
+                                        formValue.phone = ""
+                                        formValue.email = ""
+                                        formValue.adress = ""
+                                    }}
                                 >
-                                    Enviar
+                                    Terminar compra
                                 </Button>
                             </div>
-                        ) : 
-                        (
-                            <form className='form-contact' onSubmit={handleSubmit}>
-                                <TextField
-                                    id="outlined-basic"
-                                    name="name"
-                                    label="Nombre y apellido"
-                                    variant="outlined"
-                                    value={formValue.name}
-                                    margin="dense"
-                                    color='secondary'
-                                    onChange={handleChange}
-                                />
-                                <TextField
-                                    id="outlined-basic"
-                                    name="phone"
-                                    label="Teléfono"
-                                    variant="outlined"
-                                    value={formValue.phone}
-                                    margin="dense"
-                                    color='secondary'
-                                    onChange={handleChange}
-                                />
-                                <TextField
-                                    id="outlined-basic"
-                                    name="email"
-                                    label="Email"
-                                    variant="outlined"
-                                    value={formValue.email}
-                                    margin="dense"
-                                    color='secondary'
-                                    onChange={handleChange}
-                                />
-                                <Button
-                                    color='secondary'
-                                    variant='outlined'
-                                    type="submit"
-                                >
-                                    Enviar
-                                </Button>
-                            </form>
-                        )
-                    }
-                </Modal>
-            </Container>
-            }
+                        </div>
+                    </div>
+                    <Modal
+                        title={success ? "Compra exitosa" : "Formulario de contacto"}
+                        open={showModal}
+                        handleClose={() => setShowModal(false)}
+                        aria-labelledby="modal-modal-title"
+                        aria-describedby="modal-modal-description"
+                    >
+                        {success ? 
+                            (
+                                <div style={{width: "400px"}}>
+                                    <p>¡La orden se generó con éxito!</p>
+                                    <p>
+                                        Este es tu número de orden: <strong> {success}</strong>
+                                    </p>
+                                    <Button
+                                        color='secondary'
+                                        variant='outlined'
+                                        onClick={finishOrder}
+                                    >
+                                        Enviar
+                                    </Button>
+                                </div>
+                            ) : 
+                            (
+                                <form className='form-contact' onSubmit={handleSubmit}>
+                                    <TextField
+                                        id="outlined-basic"
+                                        name="name"
+                                        label="Nombre y apellido"
+                                        variant="outlined"
+                                        value={formValue.name}
+                                        margin="dense"
+                                        color='secondary'
+                                        required
+                                        onChange={handleChange}
+                                    />
+                                    <TextField
+                                        id="outlined-basic"
+                                        name="phone"
+                                        label="Teléfono"
+                                        variant="outlined"
+                                        value={formValue.phone}
+                                        margin="dense"
+                                        color='secondary'
+                                        required
+                                        onChange={handleChange}
+                                    />
+                                    <TextField
+                                        id="outlined-basic"
+                                        name="email"
+                                        label="Email"
+                                        variant="outlined"
+                                        value={formValue.email}
+                                        margin="dense"
+                                        color='secondary'
+                                        required
+                                        onChange={handleChange}
+                                    />
+                                    <TextField
+                                        id="outlined-basic"
+                                        name="adress"
+                                        label="Dirección"
+                                        variant="outlined"
+                                        value={formValue.adress}
+                                        margin="dense"
+                                        color='secondary'
+                                        required
+                                        onChange={handleChange}
+                                    />
+                                    <Button
+                                        color='secondary'
+                                        variant='outlined'
+                                        type="submit"
+                                    >
+                                        Enviar
+                                    </Button>
+                                </form>
+                            )
+                        }
+                    </Modal>
+                </Container>
+                }
+            </div>
+            <Footer />
         </>
     )
 }

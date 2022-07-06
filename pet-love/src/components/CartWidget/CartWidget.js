@@ -24,11 +24,12 @@ const CartWidget = () =>  {
         <div className='cartWidgtet-container-icon'>
             <div onClick={handleClick}>
                 <ShoppingCartIcon
-                    color='secondary'
+                    fontSize='large'
+                    color='inherit'
                     variant='outlined'
                     aria-controls={open ? 'basic-menu' : undefined}
                     aria-haspopup="true"
-                    aria-expanded={open ? 'true' : undefined}                    
+                    aria-expanded={open ? 'true' : undefined}
                 />
                 <span className='cartWidgtet-count'>{cartListItems.length}</span>
             </div>

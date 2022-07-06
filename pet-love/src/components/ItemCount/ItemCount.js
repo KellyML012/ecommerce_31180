@@ -13,7 +13,7 @@ const ItemCount = ({ quantity, setShowButton, data }) => {
 
     return(
         <> 
-            <label className='item-detail-label'>Seleccione la candidad</label>
+            <label className='item-detail-label'>Seleccioná la candidad</label>
             <span onClick={addQuantity}>$ {data.price * quantity}</span>
             <div className="count-container">
                 <div className='count-item'>

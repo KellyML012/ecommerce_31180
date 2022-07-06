@@ -21,7 +21,7 @@ const Item = ({ id, title, price, image, stock }) => {
         <Card sx={{ minWidth: 275, maxWidth: 400 }} className={`item-card-container ${darkTheme ? 'dark-mode' : ''}`}>
             <CardContent className="card-item">
                 <div className='card-item-image-container'>
-                    <img src={`./${image}`} alt={`Producto: ${title}`} onClick={() => setOpen(true)} />
+                    <img src={`/${image}`} alt={`Producto: ${title}`} onClick={() => setOpen(true)} />
                 </div>
                 <p>{title}</p>
                 <span>$ {price}</span>
@@ -47,7 +47,7 @@ const Item = ({ id, title, price, image, stock }) => {
             
             <Modal handleClose={handleClose} open={open}>
                 <h2 className='modal-title'>{title}</h2>
-                <img src={`./${image}`} alt={`Producto: ${title}`} />
+                <img src={`/${image}`} alt={`Producto: ${title}`} />
             </Modal>
         </Card>
     )

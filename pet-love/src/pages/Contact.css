@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap');
+
+.contact-container h4, .contact-container textarea, .contact-container input, .contact-container label, .contact-container p{
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    color: #272343;
+}
+
+.contact-container h4{
+    font-size: 35px;
+    line-height: 35px;    
+    font-weight: 600;
+}
+
+.contact-container input, .contact-container textarea {
+    font-size: 15px;
+    line-height: 15px;
+}

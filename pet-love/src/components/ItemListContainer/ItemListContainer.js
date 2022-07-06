@@ -33,12 +33,6 @@ const ItemListContainer = () => {
         return productList 
     }
 
-    /* const filterByCategory = (array) => {
-        return array.filter( article =>
-            article.category === category && setProductos(productos => [...productos, article])
-        )
-    } */
-
     const filterFirebase = async() => {
         const productRef = collection(db, "products")
         const queryResult = query(productRef, where("category", "==", category))
@@ -53,7 +47,7 @@ const ItemListContainer = () => {
 
     return(
         <div className="item-list-container">
-            <ItemList title={"Productos Recomendados"} products={productos}/>
+            <ItemList products={productos}/>
         </div>
     )
 }

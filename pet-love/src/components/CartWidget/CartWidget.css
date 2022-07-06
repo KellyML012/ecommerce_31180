@@ -19,15 +19,16 @@
 }
 
 .cartWidgtet-count {
+    background: #45C1F0;
     position: absolute;
-    width: 20px;
-    height: 20px;
-    color: white;
-    background: #9C27B0;
-    border: 1px solid #bd9bba;
+    width: 15px;
+    height: 15px;
+    color: white !important;
+    border: 2px solid #fff;
     border-radius: 50%;
     top: 13px;
-    right: 10px;
+    right: 12px;
+    font-size: 12px;
 }
 .item-cartWidgtet-prod {
     display: flex;
@@ -64,7 +65,7 @@
     padding: 10px 20px;
     text-align: center;
     border-radius: 500px;
-    font-size: 12px;
+    font-size: 15px;
     background: #9C27B0;
     color: white;
 }
